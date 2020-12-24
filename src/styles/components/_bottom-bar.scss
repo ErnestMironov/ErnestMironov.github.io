@@ -1,0 +1,76 @@
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  padding-bottom: 40px;
+
+  @include tablet {
+    position: static;
+
+    padding-bottom: 0;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include tablet {
+      display: block;
+
+      padding: 0;
+    }
+  }
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      justify-content: space-between;
+    }
+  }
+  &__left {
+    @include tablet {
+      margin-bottom: 30px;
+    }
+  }
+  &__lang {
+    margin-right: 17px;
+  }
+  &__lang-item {
+    display: inline-block;
+
+    margin-right: 10px;
+
+    cursor: pointer;
+
+    color: #000;
+    &.active {
+      color: $green;
+    }
+  }
+  &__soc-item {
+    &:not(:last-of-type) {
+      margin-right: 20px;
+    }
+    img {
+      height: 24px;
+    }
+  }
+}
+
+// Темная тема
+html.theme-dark {
+  .bottom-bar {
+    &__soc-item path {
+      fill: #fff;
+    }
+    &__lang-item {
+      &:not(.active) {
+        color: #fff;
+      }
+    }
+  }
+}

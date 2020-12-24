@@ -1,0 +1,17 @@
+@import "common/reset";
+@import "common/_variables.scss";
+
+@import "./node_modules/animate.css/source/_vars";
+@import "./node_modules/animate.css/source/_base";
+@import "./node_modules/animate.css/source/back_entrances/backInLeft";
+@import "./node_modules/swiper/swiper";
+
+@import "common/_base.scss";
+
+@import "components/btn";
+@import "components/menu";
+@import "components/switch";
+
+@import "components/header";
+@import "components/bottom-bar";
+@import "components/profile";

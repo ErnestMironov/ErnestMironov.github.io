@@ -1,0 +1,33 @@
+html {
+	font-family: "Roboto", sans-serif;
+	font-size: 14px;
+	line-height: 16px;
+
+	transition: all ease 0.18s;
+
+	color: $dark;
+	&.theme-dark {
+		color: #fff;
+		background-color: $dark;
+	}
+}
+
+.loader {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+
+	width: 0;
+	height: 5px;
+
+	transition: ease 0.16s;
+
+	background-color: $green;
+}
+
+.container {
+	max-width: 1440px;
+	margin: auto;
+	padding: 0 20px;
+}

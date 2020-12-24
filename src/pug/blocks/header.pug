@@ -1,0 +1,31 @@
+header.header 
+	.container
+		.header__logo 
+			img.svg(src="images/icons/logo.svg", alt="")
+		twirl-burger 
+		nav.header__nav
+			ul.menu
+				li.menu__item.active
+					a(href="javascript:;") Основная информация
+				li.menu__item
+					a(href="javascript:;") Навыки
+				li.menu__item
+					a(href="javascript:;") Портфолио
+				li.menu__item
+					a(href="javascript:;") Контакты
+			.bottom-bar
+				.container 
+					.bottom-bar__left
+						.bottom-bar__lang
+							span.bottom-bar__lang-item.active(tabindex="0") ru
+							span.bottom-bar__lang-item(tabindex="0") en
+						label.switch
+							input#themeSwitch(type="checkbox")
+							span.switch__slider
+					.bottom-bar__right
+						a.bottom-bar__soc-item(href="javascript:;")
+							img.svg(src="images/icons/phone.svg", alt="call")
+						a.bottom-bar__soc-item(href="javascript:;")
+							img(src="images/icons/gmail.svg", alt="gmail")
+						a.bottom-bar__soc-item(href="javascript:;")
+							img(src="images/icons/telegram.svg", alt="telegram")

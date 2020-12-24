@@ -1,0 +1,29 @@
+.menu {
+  display: flex;
+
+  @include tablet {
+    display: block;
+    text-align: right;
+  }
+
+  &__item {
+    font-weight: normal;
+
+    &:not(:last-of-type) {
+      margin-right: 26px;
+      @include tablet {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: ease 0.18s;
+    }
+    &:hover,
+    &.active {
+      color: $green;
+    }
+  }
+}
