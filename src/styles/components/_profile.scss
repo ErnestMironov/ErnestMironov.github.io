@@ -1,10 +1,17 @@
 .profile {
+	min-height: calc(100vh - 200px);
+	margin-top: 200px;
+
+	@include tablet {
+		display: block;
+
+		margin-top: 100px;
+	}
 	.container {
 		display: flex;
 		align-items: flex-start;
 
 		max-width: 1200px;
-		margin-top: 120px;
 	}
 	&__ava {
 		position: relative;
@@ -17,6 +24,14 @@
 
 		border-radius: 50%;
 		filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.25));
+
+		@include tablet {
+			display: block;
+
+			width: 250px;
+			margin: auto;
+			padding-bottom: 250px;
+		}
 		img {
 			position: absolute;
 			top: 0;
@@ -28,16 +43,71 @@
 			object-position: center;
 		}
 	}
+	&__info-wrap {
+		position: relative;
+
+		overflow: hidden;
+
+		height: calc(70vh - 120px);
+		margin-top: 30px;
+
+		@include tablet {
+			overflow: visible;
+
+			max-height: auto;
+		}
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			width: calc(100% - 8px);
+			height: 25px;
+
+			content: "";
+			user-select: none;
+
+			background: linear-gradient(
+				180deg,
+				rgba(255, 255, 255, 0) 0%,
+				#ffffff 100%
+			);
+
+			@include tablet {
+				display: none;
+			}
+		}
+	}
 	&__info {
 		font-size: 18px;
 
+		overflow-x: hidden;
 		overflow-y: auto;
 		flex: auto;
 
-		max-height: calc(90vh - 120px);
-		margin-top: 30px;
+		max-height: 100%;
+		padding-right: 20px;
 
 		color: $grey;
+
+		@include tablet {
+			overflow: visible;
+
+			max-height: auto;
+			padding-right: 0;
+		}
+		&::-webkit-scrollbar {
+			width: 8px;
+
+			border-radius: 5px;
+			background-color: $light-grey;
+		}
+		&::-webkit-scrollbar-thumb {
+			width: 100%;
+
+			border-radius: 5px;
+			background: $green;
+		}
 	}
 	&__title {
 		font-size: 24px;
@@ -75,6 +145,25 @@
 	&__desc {
 		margin-top: 30px;
 	}
+	&__desc-list-item {
+		margin-bottom: 15px;
+		&:before {
+			content: "— ";
+		}
+	}
+	&__desc-sublist {
+		margin-top: 5px;
+		padding-left: 15px;
+	}
+	&__desc-sublist-item {
+		margin-bottom: 5px;
+		&:before {
+			content: "- ";
+		}
+	}
+	&__packages {
+		margin-top: 60px;
+	}
 }
 
 // Темная тема
@@ -82,6 +171,15 @@ html.theme-dark {
 	.profile {
 		&__title {
 			color: #fff;
+		}
+		&__info-wrap {
+			&::after {
+				background: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0) 0%,
+					#202020 100%
+				);
+			}
 		}
 	}
 }

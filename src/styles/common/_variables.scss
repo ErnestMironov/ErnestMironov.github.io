@@ -1,24 +1,25 @@
 $green: #269f57;
 $grey: #838383;
+$light-grey: #c4c4c4;
 $dark: #202020;
 
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
 @mixin mobile {
-  @media (max-width: #{$tablet-width - 1px}) {
-    @content;
-  }
+	@media (max-width: #{$tablet-width - 1px}) {
+		@content;
+	}
 }
 
 @mixin tablet {
-  @media (max-width: #{$desktop-width - 1px}) {
-    @content;
-  }
+	@media (max-width: #{$desktop-width - 1px}) {
+		@content;
+	}
 }
 
 @mixin desktop {
-  @media (min-width: #{$desktop-width}) {
-    @content;
-  }
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
 }

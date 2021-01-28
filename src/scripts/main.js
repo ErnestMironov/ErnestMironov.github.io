@@ -3,37 +3,17 @@
  */
 import $ from 'jquery'
 import WOW from 'wow.js'
-import Swiper, { Autoplay, Navigation, EffectFade } from 'swiper';
-Swiper.use([Autoplay, Navigation, EffectFade]);
 import pasteSVG from './utils/pasteSvg'
 import { theme } from './utils/theme';
+import { menu } from './utils/menu';
+import { sliders } from './utils/sliders';
 
-import 'vanilla-hamburger/twirl-burger.js';
-
-$('twirl-burger').on('click', () => {
-    $(".header__nav").toggleClass("show")
-})
-
+menu();
 theme();
 
 $(document).ready(function () {
     pasteSVG()
-    const swiper = new Swiper(`.welcome__slider .swiper-container`, {
-        slidesPerView: 1,
-        loop: true,
-        navigation: {
-            nextEl: '.welcome__nav-item_next',
-            prevEl: '.welcome__nav-item_prev',
-        },
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        autoplay: {
-            delay: 2000
-        },
-    });
-
+    sliders()
     // window.onscroll = () => { scrollProgress() };
 
     // function scrollProgress() {
